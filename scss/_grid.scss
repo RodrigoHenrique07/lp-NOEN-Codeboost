@@ -1,0 +1,18 @@
+.container {
+    width: 100%;
+    max-width: 124.6rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    @include responsivo(991px){
+        width: 97%;
+}
+@include responsivo(768px){
+    width: 96%;
+}
+@include responsivo(480px){
+    width: 94%;
+}
+@include responsivo(376px){
+    width: 92%;
+}
+}

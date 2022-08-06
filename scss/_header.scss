@@ -1,0 +1,83 @@
+header {
+    
+    height: 8.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.20);
+    
+    
+    .container {
+        @include flex(row, center, space-between );
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 5.9rem;
+            ul {
+                display: flex;
+                align-items: center;
+                gap: 4.8rem;
+
+                li {
+                    a {
+                        font-family: 'Poppins', sans-serif;
+                        font-style: 500;
+                        font-size: 1.6rem;
+                        line-height: 125%;
+                        color: white;
+                        transition: color .3s;
+
+                        &:hover {
+                            color: $brand-yellow;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-mobile{
+            display: none;
+        }
+        
+    }
+    @include responsivo(1080px){
+       .container{
+
+           nav{
+               gap: 3.2rem;
+               ul{
+                   gap: 3.2rem;
+               }
+           }
+       }
+    }
+    @include responsivo(991px){
+        .container{
+           .logo{
+            max-width: 108px;
+           }
+            nav{
+                ul{
+                    display: none;
+                }
+            }
+            .btn-mobile{
+                display: block;
+            }
+        }
+    }
+    @include responsivo(480px){
+        .container{
+
+            nav{
+                .btn-secondary{
+                    display: none;
+                }
+            }
+        }
+        height: 7.3rem;
+    }
+    
+}
