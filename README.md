@@ -15,6 +15,7 @@ Portanto, confesso que, esse foi um projeto bastante desafiador que veio para co
 ## Status ✅
 O projeto foi desenvolvido junto ao curso CodeBoost, do William Moreira, nele foi trabalhado o html semântico, SASS, onde foi criado vários arquivos a fim de dividir melhor as pastas e melhorar a organização do projeto e o JS com adição de bibliotecas como: swiper e AOS Animate.
 Esse foi o resultado:
+link do projeto: https://neon-codeboost-lp.netlify.app
 
  ![image](https://user-images.githubusercontent.com/99925589/183254633-d474f84f-4233-4a5f-b6b7-c096a7d5b16a.png)
 
