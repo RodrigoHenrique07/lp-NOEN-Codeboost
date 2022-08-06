@@ -6,7 +6,7 @@ Projeto Cartão do banco Neon
    * [Tecnologias](#tecnologias)
      * <p> HTML, CSS com SASS e JavaScript </p>
    
-#Aprendizado 
+## Aprendizado 
 Esse projeto veio para aperfeiçoar ainda mais a utilização das tags no html, bem como melhorar a visuação da construção de uma landingPage em diferentes section/div,
 trouxe também novos aprendizados no CSS como a utilização do ::After e utlização do position além de aprensentar um pouco do Java Escricpt com a utilização de duas ferramentas,
 tais como: Swiper para adicionar slides e AOS Animate para criar animações, além do @keyframes e como coloar o projeto na WEB pelo netlify e criar Meta Tags pelo metatags.io.
