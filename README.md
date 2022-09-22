@@ -33,7 +33,8 @@ link do projeto: https://neon-codeboost-lp.netlify.app
  
  ![image](https://user-images.githubusercontent.com/99925589/191744155-f53f9ef7-c2c7-4504-867c-c7113dfaa116.png)
 
- ## Mobile :mobile_phone: 
+ ## Mobile 📱
+ 
  ![image](https://user-images.githubusercontent.com/99925589/191744900-02f6fd48-92a6-4c48-a9d7-6680c14ff2e9.png)
 
  
