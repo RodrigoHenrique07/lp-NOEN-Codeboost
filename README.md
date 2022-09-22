@@ -1,5 +1,4 @@
 # Projeto lp-NEON 👨‍🚀
-## Descrição do projeto
 Projeto Cartão do banco Neon
 
 # [Tecnologias utilizadas](#tecnologias)
