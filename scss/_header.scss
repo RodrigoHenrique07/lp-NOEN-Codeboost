@@ -1,18 +1,68 @@
 header {
     
     height: 8.8rem;
-    position: absolute;
+    position: fixed; /*deixar o menu fixo */
+    z-index: 1; /*deixar o menu sobreposto com relação ao restando do conteúdo */
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     border-bottom: 2px solid rgba(255, 255, 255, 0.20);
     
-    
+    &.fixed-menu{
+        background-color: #ffff;
+        z-index: 10;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05); //Borda com sombreamento
+       .container {
+        .logo{
+            display: inline-block; // a tag 'a' vem com o display bloc por padrão e não pode determinar largura e altura
+            width: 13.2rem;
+            height: 3rem;
+            background-image: url(../img/logo-blue.svg);
+            background-size: 100%;
+        }
+        nav {
+            ul{
+                li{
+                    a{
+                        color: $brand-blue;
+                        transition: color .3s;
+                        &:hover{
+                            color: #00a5f0;
+                        }
+                    }
+                }
+            }
+            
+            .btn-secondary{
+                color: #00a5f0;
+                border: 1px solid #00a5f0;
+                transition: all .3s;
+                &:hover{
+                    background: #00a5f0;
+                    color: #ffff;
+                }
+            }
+            
+        }
+       }
+    }
     .container {
         @include flex(row, center, space-between );
+       
+        .logo{
+            display: inline-block; /* como mudou a img por background, a tag 'a' vem por padrão com o display-block, logo
+            usa-se o display-inline-block para poder determinar largura e altura */
+            width: 13.2rem;
+            height: 3rem;
+            background: url(../img/logo.svg) no-repeat center center;
+            background-size: 100%; //faz a imagem ocupar todo o espaço determinado
+            transition: backgroung-image .3s;
 
+        }
+        
         nav {
+            position: relative;
             display: flex;
             align-items: center;
             gap: 5.9rem;
@@ -36,6 +86,68 @@ header {
                     }
                 }
             }
+           
+        
+        .dropdown{
+            position: absolute; /* para ficar posicionado com relação ao nav */
+            top: 50px;
+            left: -145px;
+            padding: 4rem;
+            background-color: #ffff;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 31.3rem;
+            opacity: 0; /* usado para esconder o Popup, mas ele só esconde */
+            pointer-events: none; /*tira a funcionalidade de click */
+            
+            transform: translateY(20px); /*efeito de vir de baixo pra cima */
+            transition: all .3s;
+            
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0); /* é preciso retornar o efeito aqui 
+                para quando a class estiver ativa */
+            }
+            
+            &::after{
+                position: absolute;
+                content: "";
+                width: 270px;
+                height: 5px;
+                bottom: 0;
+                border-radius: 12px 12px 0px 0px;
+                background: $brand-yellow;
+            }
+            
+            .item{
+               
+                &:not(:last-child){
+                    margin-bottom: 2.8rem;
+                }
+                &:hover{
+                    a{
+                        color: $brand-blue;
+                    }
+                }
+                a{
+                    font-weight: 600;
+                    font-size: 1.6rem;
+                    line-height: 1.9rem;
+                    color: $grey-400;
+                    margin-bottom: 4px;
+                    transition: color .3s;
+                    
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 1.4rem;
+                    line-height: 150%;
+                    color: $grey-500;
+                }
+            }
+        }
+        
         }
         .btn-mobile{
             display: none;
@@ -80,4 +192,61 @@ header {
         height: 7.3rem;
     }
     
+}
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    .overley {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 0;
+    }
+    aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 65%;
+        height: 100%;
+        background-color: #ffff;
+        padding: 3rem;
+        transform: translateX(-100%); /*esconder a barra de menu pra esquerda */
+        transition: transform .3s;
+        border-radius:  0 2rem 2rem  30rem;
+        .logo {
+            max-width: 15rem;
+            margin-bottom: 4rem;
+        }
+        ul {
+            li{
+                a{
+                    padding: 1.5rem 0;
+                    display: block;
+                    font-size: 1.6rem;
+                    color: #5f5c6b;
+                }
+            }
+        }
+    }
+}
+
+.menu-opened {
+    overflow: hidden; /*impedir o scroll quando a class estiver ativa */
+    .menu-mobile {
+        opacity: 1;
+        pointer-events: all;
+        aside {
+            transform: translateX(0%);
+        }
+    }
 }
